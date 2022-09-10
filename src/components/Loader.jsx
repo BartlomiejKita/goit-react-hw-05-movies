@@ -2,7 +2,7 @@ import { Circles } from 'react-loader-spinner';
 import styled from 'styled-components';
 
 const SpinnerWrapper = styled.div`
-  margin: 10px auto;
+  margin: 25px 50px;
 `;
 
 const Loader = () => {
