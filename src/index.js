@@ -3,12 +3,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import HomePage from 'components/HomePage';
-import MoviesPage from 'components/MoviesPage';
-import NotFound from 'components/NotFound';
-import MoviesDetailsPage from 'components/MovieDetailsPage';
-import Cast from 'components/Cast';
-import Reviews from 'components/Reviews';
+
+const HomePage = React.lazy(() => import('components/HomePage'));
+const MoviesPage = React.lazy(() => import('components/MoviesPage'));
+const MoviesDetailsPage = React.lazy(() =>
+  import('components/MovieDetailsPage')
+);
+const Cast = React.lazy(() => import('components/Cast'));
+const Reviews = React.lazy(() => import('components/Reviews'));
+const NotFound = React.lazy(() => import('components/NotFound'));
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

@@ -1,20 +1,20 @@
 import React from 'react';
-import { Link, Outlet} from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 
 const MovieDetails = ({ movie }) => {
   const { id, title, overview, vote_average, genres, poster_path } = movie;
   return (
     <>
-    
       <div>
         {poster_path !== undefined ? (
           <img
-            
             src={`https://image.tmdb.org/t/p/w500${poster_path}`}
             alt={`${title} movie poster`}
           />
         ) : (
-          <p>Sorry, no poster available</p>
+          <img src={'https://placehold.co/500x750'} alt={`just placeholder`} />
         )}
         <div>
           <h1>{title}</h1>
@@ -29,20 +29,20 @@ const MovieDetails = ({ movie }) => {
         <h3>Additional information</h3>
         <ul>
           <li>
-            <Link to={`/movies/${id}/cast`}>
-              Cast
-            </Link>
+            <Link to={`/movies/${id}/cast`}>Cast</Link>
           </li>
-          <li >
-            <Link to={`/movies/${id}/reviews`}>
-              Reviews
-            </Link>
+          <li>
+            <Link to={`/movies/${id}/reviews`}>Reviews</Link>
           </li>
         </ul>
         <Outlet />
       </div>
     </>
   );
+};
+
+MovieDetails.propTypes = {
+  movie: PropTypes.object,
 };
 
 export default MovieDetails;

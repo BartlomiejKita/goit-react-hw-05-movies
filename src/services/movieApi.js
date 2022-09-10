@@ -27,28 +27,28 @@ const fetchMovieById = async (movieId, setMovie) => {
   }
 };
 
-const fetchMovieCastById = (movieId, setCast) => {
-  fetch(`${BASE_URL}movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
-      return response.json();
-    })
-    .then(movie => setCast(movie.cast))
-    .catch(e => console.log(e));
+const fetchMovieCastById = async (movieId, setCast) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`
+    );
+
+    return setCast(response.data.cast);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
-const fetchMovieReviewsById = (movieId, setReviews) => {
-  fetch(`${BASE_URL}movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
-      return response.json();
-    })
-    .then(movie => setReviews(movie.results))
-    .catch(e => console.log(e));
+const fetchMovieReviewsById = async (movieId, setReviews) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US`
+    );
+
+    return setReviews(response.data.results);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 const fetchMovieByQuery = async (query, setSearchedMovie) => {

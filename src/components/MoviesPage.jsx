@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet, useParams, useSearchParams, Link } from 'react-router-dom';
 import api from 'services/movieApi';
+
 const MoviesPage = () => {
   const [searchedMovie, setSearchedMovie] = useState([]);
   const [searchQuery, setSearchQuery] = useSearchParams();
@@ -26,6 +27,7 @@ const MoviesPage = () => {
   }, [query]);
 
   let params = useParams();
+  
   return (
     <>
       {!params.movieId && (

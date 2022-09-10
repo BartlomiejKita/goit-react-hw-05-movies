@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const List = styled.ul``;
 
@@ -16,6 +17,10 @@ const MoviesList = ({ movies }) => {
       </List>
     </>
   );
+};
+
+MoviesList.propTypes = {
+  movie: PropTypes.object,
 };
 
 export default MoviesList;
