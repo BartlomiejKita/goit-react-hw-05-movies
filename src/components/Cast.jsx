@@ -25,7 +25,7 @@ const Cast = () => {
         ) : (
           cast.map(({ character, id, name, profile_path }) => (
             <li key={id}>
-              {profile_path === null ? (
+              {profile_path === (null || undefined) ? (
                 <img
                   src={'https://placehold.jp/200x300.png'}
                   alt={`just placeholder`}
