@@ -4,9 +4,25 @@ import api from 'services/movieApi';
 import styled from 'styled-components';
 
 const StyledList = styled.ul`
-  list-style: none;
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  padding: 0px;
+  list-style-type: none;
+`;
+
+const StyledItem = styled.li`
+  border: 1px solid black;
+  border-radius: 12px;
+  text-align: center;
+  background-color: #878f99;
+  overflow: hidden;
+`;
+
+const Img = styled.img`
+  display: block;
+  max-width: 300px;
+  width: 100%;
 `;
 
 const Cast = () => {
@@ -24,21 +40,21 @@ const Cast = () => {
           <p>Sorry, the cast is not available</p>
         ) : (
           cast.map(({ character, id, name, profile_path }) => (
-            <li key={id}>
-              {profile_path === (null || undefined) ? (
-                <img
+            <StyledItem key={id}>
+              {profile_path === null ? (
+                <Img
                   src={'https://placehold.jp/200x300.png'}
                   alt={`just placeholder`}
                 />
               ) : (
-                <img
+                <Img
                   src={`https://image.tmdb.org/t/p/w200${profile_path}`}
                   alt={`${name}`}
                 />
               )}
-              <p>Name: {name}</p>
+              <h4>Name: {name}</h4>
               <p>Character: {character}</p>
-            </li>
+            </StyledItem>
           ))
         )}
       </StyledList>

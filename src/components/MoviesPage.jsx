@@ -53,11 +53,14 @@ const MoviesPage = () => {
       return;
     }
     setSearchQuery({ query: formQuery });
-    api.fetchMovieByQuery(query, setSearchedMovie);
     form.reset();
   };
 
   useEffect(() => {
+    if (query === null) {
+      setSearchedMovie([]);
+      return;
+    }
     api.fetchMovieByQuery(query, setSearchedMovie);
   }, [query]);
 

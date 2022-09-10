@@ -12,7 +12,7 @@ const InfoWrapper = styled.div`
   `;
 
 const MovieDetails = ({ movie }) => {
-  const { id, title, overview, vote_average, genres, poster_path } = movie;
+  const {  title, overview, vote_average, genres, poster_path } = movie;
   return (
     <>
       <Wrapper>
@@ -42,10 +42,10 @@ const MovieDetails = ({ movie }) => {
         <h3>Additional information</h3>
         <ul>
           <li>
-            <Link to={`movies/${id}/cast`}>Cast</Link>
+            <Link to={`cast`}>Cast</Link>
           </li>
           <li>
-            <Link to={`movies/${id}/reviews`}>Reviews</Link>
+            <Link to={`reviews`}>Reviews</Link>
           </li>
         </ul>
         <Outlet />

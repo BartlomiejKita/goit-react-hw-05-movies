@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Outlet, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import api from 'services/movieApi';
 import MovieDetails from './MovieDetails';
 import { IoIosArrowRoundBack } from 'react-icons/io';
@@ -57,7 +57,6 @@ const MoviesDetailsPage = () => {
         <IoIosArrowRoundBack /> Go back
       </Button>
       <MovieDetails movie={movie} />
-      <Outlet />
     </>
   );
 };
