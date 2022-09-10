@@ -15,7 +15,7 @@ const NotFound = React.lazy(() => import('components/NotFound'));
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter >
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<HomePage />} />

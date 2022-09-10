@@ -4,7 +4,6 @@ import api from 'services/movieApi';
 import styled from 'styled-components';
 import { nanoid } from 'nanoid';
 
-
 const StyledList = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -43,12 +42,13 @@ const Cast = () => {
         ) : (
           cast.map(({ character, name, profile_path }) => (
             <StyledItem key={nanoid()}>
-              {profile_path === null ? (
+              {!profile_path && (
                 <Img
                   src={'https://placehold.jp/200x300.png'}
                   alt={`just placeholder`}
                 />
-              ) : (
+              )}
+              {profile_path && (
                 <Img
                   src={`https://image.tmdb.org/t/p/w200${profile_path}`}
                   alt={`${name}`}

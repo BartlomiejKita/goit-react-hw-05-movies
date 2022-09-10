@@ -17,12 +17,13 @@ const MovieDetails = ({ movie }) => {
     <>
       <Wrapper>
         <div>
-          {poster_path === (undefined) ? (
+          {!poster_path && (
             <img
               src={'https://placehold.co/500x750'}
               alt={`just placeholder`}
             />
-          ) : (
+          )}
+          {poster_path && (
             <img
               src={`https://image.tmdb.org/t/p/w500${poster_path}`}
               alt={`${title} movie poster`}
