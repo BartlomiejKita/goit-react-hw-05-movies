@@ -38,7 +38,7 @@ const Cast = () => {
     <>
       <StyledList>
         {cast.length < 1 ? (
-          <p>Sorry, the cast is not available</p>
+          <p>Sorry, the cast is not available!</p>
         ) : (
           cast.map(({ character, name, profile_path }) => (
             <StyledItem key={nanoid()}>

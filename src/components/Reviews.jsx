@@ -28,7 +28,7 @@ const Reviews = () => {
   return (
     <>
       {reviews.length < 1 ? (
-        <p>Sorry, reviews are not available</p>
+        <p>Sorry, no one has reviewed this title yet!</p>
       ) : (
         <StyledList>
           {reviews.map(({ author, content, id }) => (
