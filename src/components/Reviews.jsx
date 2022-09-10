@@ -10,8 +10,8 @@ const StyledList = styled.ul`
 const StyledItem = styled.li`
   border: 1px solid black;
   border-radius: 12px;
-
-  padding-left: 10px;
+  padding: 15px;
+  text-align: justify;
   margin-bottom: 10px;
   background-color: #878f99;
   overflow: hidden;
@@ -33,8 +33,8 @@ const Reviews = () => {
         <StyledList>
           {reviews.map(({ author, content, id }) => (
             <StyledItem key={id}>
-              <h4>Review author: {author}</h4>
               <p>{content}</p>
+              <h4>Review author: {author}</h4>
             </StyledItem>
           ))}
         </StyledList>

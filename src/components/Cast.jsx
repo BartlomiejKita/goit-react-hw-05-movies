@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import api from 'services/movieApi';
 import styled from 'styled-components';
+import { nanoid } from 'nanoid';
+
 
 const StyledList = styled.ul`
   display: grid;
@@ -39,8 +41,8 @@ const Cast = () => {
         {cast.length < 1 ? (
           <p>Sorry, the cast is not available</p>
         ) : (
-          cast.map(({ character, id, name, profile_path }) => (
-            <StyledItem key={id}>
+          cast.map(({ character, name, profile_path }) => (
+            <StyledItem key={nanoid()}>
               {profile_path === null ? (
                 <Img
                   src={'https://placehold.jp/200x300.png'}

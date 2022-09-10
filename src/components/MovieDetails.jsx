@@ -12,12 +12,12 @@ const InfoWrapper = styled.div`
   `;
 
 const MovieDetails = ({ movie }) => {
-  const {  title, overview, vote_average, genres, poster_path } = movie;
+  const { title, overview, vote_average, genres, poster_path } = movie;
   return (
     <>
       <Wrapper>
         <div>
-          {poster_path === (undefined || null) ? (
+          {poster_path === (undefined) ? (
             <img
               src={'https://placehold.co/500x750'}
               alt={`just placeholder`}
