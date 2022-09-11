@@ -4,14 +4,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-const HomePage = React.lazy(() => import('components/HomePage'));
-const MoviesPage = React.lazy(() => import('components/MoviesPage'));
+const HomePage = React.lazy(() => import('pages/HomePage'));
+const MoviesPage = React.lazy(() => import('pages/MoviesPage'));
 const MoviesDetailsPage = React.lazy(() =>
-  import('components/MovieDetailsPage')
+  import('pages/MovieDetailsPage')
 );
-const Cast = React.lazy(() => import('components/Cast'));
-const Reviews = React.lazy(() => import('components/Reviews'));
-const NotFound = React.lazy(() => import('components/NotFound'));
+const Cast = React.lazy(() => import('pages/Cast'));
+const Reviews = React.lazy(() => import('pages/Reviews'));
+const NotFound = React.lazy(() => import('pages/NotFound'));
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

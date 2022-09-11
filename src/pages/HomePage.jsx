@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import api from 'services/movieApi';
 import styled from 'styled-components';
-import MoviesList from './MoviesList';
+import MoviesList from '../components/MoviesList';
 
 const Header = styled.h2`
   font-weight: bold;

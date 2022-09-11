@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import api from 'services/movieApi';
-import MovieDetails from './MovieDetails';
+import MovieDetails from '../components/MovieDetails';
 import { IoIosArrowRoundBack } from 'react-icons/io';
 import styled from 'styled-components';
 
