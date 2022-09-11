@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 
 const Main = styled.div`
   position: relative;
@@ -30,31 +32,6 @@ const Header = styled.h1`
   line-height: 24px;
 `;
 
-// a {
-//   margin: 0;
-//   font-weight: 600;
-//   line-height: 24px;
-//   color: #054861;
-// }
-
-// a svg {
-//   position: relative;
-//   top: 2px;
-// }
-
-// a:hover,
-// a:focus {
-//   text-decoration: none;
-// }
-
-// a:hover svg path{
-//   fill: #007067;
-// }
-
-// p:last-of-type {
-//   margin-bottom: 0;
-// }
-
 const NotFound = () => {
   return (
     <>
@@ -66,13 +43,7 @@ const NotFound = () => {
               Looks like you've followed a broken link or entered a URL that
               doesn't exist on this site.
             </p>
-            <p> Back to our site</p>
-            <hr />
-            <p>
-              If this is your site, and you weren't expecting a 404 for this
-              path, please visit Netlify's "page not found" support guide for
-              troubleshooting tips.
-            </p>
+            <Link to="/">Back to our site</Link> 
           </div>
         </Card>
       </Main>

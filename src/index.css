@@ -17,7 +17,6 @@ code {
 
 a {
   text-decoration: none;
-  
 }
 
 a:hover {
@@ -27,4 +26,3 @@ a:hover {
   background-size: auto 6px;
   background-repeat: repeat-x;
 }
-
