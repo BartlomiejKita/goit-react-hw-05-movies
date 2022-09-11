@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Loader from './Loader';
 
 const Wrapper = styled.div`
   display: flex;
@@ -49,7 +50,9 @@ const MovieDetails = ({ movie }) => {
             <Link to={`reviews`}>Reviews</Link>
           </li>
         </ul>
-        <Outlet />
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
       </div>
     </>
   );
