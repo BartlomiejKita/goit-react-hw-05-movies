@@ -26,7 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             </Route>
           </Route>
         </Route>
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<App />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
