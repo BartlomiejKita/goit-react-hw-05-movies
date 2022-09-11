@@ -11,7 +11,7 @@ const MoviesDetailsPage = React.lazy(() =>
 );
 const Cast = React.lazy(() => import('components/Cast'));
 const Reviews = React.lazy(() => import('components/Reviews'));
-const NotFound = React.lazy(() => import('components/NotFound'));
+// const NotFound = React.lazy(() => import('components/NotFound'));
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
