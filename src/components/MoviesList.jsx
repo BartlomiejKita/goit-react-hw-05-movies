@@ -1,26 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const List = styled.ul``;
-
 const MoviesList = ({ movies }) => {
+  const location = useLocation();
+
   return (
     <>
-      <List>
-        {movies.map(movie => (
-          <li key={movie.id}>
-            <Link to={`movies/${movie.id}`}>{movie.title}</Link>
+      <ul>
+        {movies.map(({ id, title }) => (
+          <li key={id}>
+            <Link to={`/movies/${id}`} state={{ from: location }}>
+              {title}
+            </Link>
           </li>
         ))}
-      </List>
+      </ul>
     </>
   );
 };
 
 MoviesList.propTypes = {
-  movie: PropTypes.object,
+  movies: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default MoviesList;

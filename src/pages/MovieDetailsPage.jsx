@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import api from 'services/movieApi';
 import MovieDetails from '../components/MovieDetails';
 import { IoIosArrowRoundBack } from 'react-icons/io';
@@ -38,10 +38,15 @@ const Button = styled.button`
 `;
 
 const MoviesDetailsPage = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation();
+
 
   const [movie, setMovie] = useState({});
   const { movieId } = useParams();
+  const backTo =
+    `${location.state?.from?.pathname}${location.state?.from?.search}` ??
+    '/movies';
 
   useEffect(() => {
     api.fetchMovieById(movieId, setMovie);
@@ -51,7 +56,7 @@ const MoviesDetailsPage = () => {
     <>
       <Button
         onClick={() => {
-          navigate(-1);
+          navigate(backTo , { replace: true });
         }}
       >
         <IoIosArrowRoundBack /> Go back

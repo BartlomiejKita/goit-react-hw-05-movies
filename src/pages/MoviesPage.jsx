@@ -1,5 +1,6 @@
+import MoviesList from 'components/MoviesList';
 import React, { useEffect, useState } from 'react';
-import { Outlet, useParams, useSearchParams, Link } from 'react-router-dom';
+import { Outlet, useParams, useSearchParams} from 'react-router-dom';
 import api from 'services/movieApi';
 import styled from 'styled-components';
 
@@ -74,13 +75,7 @@ const MoviesPage = () => {
             <Input type="text" name="query"></Input>
             <Button type="submit">Search Movies</Button>
           </form>
-          <ul>
-            {searchedMovie.map(({ id, title }) => (
-              <li key={id}>
-                <Link to={`/movies/${id}`}>{title}</Link>
-              </li>
-            ))}
-          </ul>
+          <MoviesList movies={searchedMovie} />
         </>
       )}
       {params.movieId && (

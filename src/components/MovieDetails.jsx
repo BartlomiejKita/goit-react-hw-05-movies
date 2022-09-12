@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Loader from './Loader';
@@ -13,6 +13,8 @@ const InfoWrapper = styled.div`
   `;
 
 const MovieDetails = ({ movie }) => {
+    const location = useLocation();
+
   const { title, overview, vote_average, genres, poster_path } = movie;
   return (
     <>
@@ -44,10 +46,14 @@ const MovieDetails = ({ movie }) => {
         <h3>Additional information</h3>
         <ul>
           <li>
-            <Link to={`cast`}>Cast</Link>
+            <Link to={`cast`} state={location.state}>
+              Cast
+            </Link>
           </li>
           <li>
-            <Link to={`reviews`}>Reviews</Link>
+            <Link to={`reviews`} state={location.state}>
+              Reviews
+            </Link>
           </li>
         </ul>
         <Suspense fallback={<Loader />}>
