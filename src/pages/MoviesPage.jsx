@@ -65,14 +65,14 @@ const MoviesPage = () => {
     api.fetchMovieByQuery(query, setSearchedMovie);
   }, [query]);
 
-  let params = useParams();
+  const params = useParams();
 
   return (
     <>
       {!params.movieId && (
         <>
           <form onSubmit={searchMovie}>
-            <Input type="text" name="query"></Input>
+            <Input type="text" name="query"/>
             <Button type="submit">Search Movies</Button>
           </form>
           <MoviesList movies={searchedMovie} />
