@@ -45,8 +45,8 @@ const MoviesDetailsPage = () => {
   const [movie, setMovie] = useState({});
   const { movieId } = useParams();
   const backTo =
-    `${location.state?.from?.pathname}${location.state?.from?.search}` ??
-    '/movies';
+    location.state?.from ??
+    '/';
 
   useEffect(() => {
     api.fetchMovieById(movieId, setMovie);
