@@ -41,12 +41,9 @@ const MoviesDetailsPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-
   const [movie, setMovie] = useState({});
   const { movieId } = useParams();
-  const backTo =
-    location.state?.from ??
-    '/';
+  const backTo = location.state?.from ?? '/';
 
   useEffect(() => {
     api.fetchMovieById(movieId, setMovie);
@@ -56,7 +53,7 @@ const MoviesDetailsPage = () => {
     <>
       <Button
         onClick={() => {
-          navigate(backTo , { replace: true });
+          navigate(backTo, { replace: true });
         }}
       >
         <IoIosArrowRoundBack /> Go back
